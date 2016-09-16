@@ -4,8 +4,6 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.data.ScatterData;
-import com.github.mikephil.charting.data.ScatterDataSet;
 
 import org.junit.Test;
 
@@ -29,16 +27,16 @@ public class ChartDataTest {
         entries1.add(new Entry(15, -2));
         entries1.add(new Entry(21, 50));
 
-        ScatterDataSet set1 = new ScatterDataSet(entries1, "");
+        LineDataSet set1 = new LineDataSet(entries1, "");
 
         List<Entry> entries2 = new ArrayList<Entry>();
         entries2.add(new Entry(-1, 10));
         entries2.add(new Entry(10, 2));
         entries2.add(new Entry(20, 5));
 
-        ScatterDataSet set2 = new ScatterDataSet(entries2, "");
+        LineDataSet set2 = new LineDataSet(entries2, "");
 
-        ScatterData data = new ScatterData(set1, set2);
+        LineData data = new LineData(set1, set2);
 
         assertEquals(-2, data.getYMin(YAxis.AxisDependency.LEFT), 0.01f);
         assertEquals(50f, data.getYMax(YAxis.AxisDependency.LEFT), 0.01f);
@@ -82,7 +80,7 @@ public class ChartDataTest {
         entries3.add(new Entry(0, 200));
         entries3.add(new Entry(0, -50));
 
-        ScatterDataSet set3 = new ScatterDataSet(entries3, "");
+        LineDataSet set3 = new LineDataSet(entries3, "");
         set3.setAxisDependency(YAxis.AxisDependency.RIGHT);
 
         data.addDataSet(set3);

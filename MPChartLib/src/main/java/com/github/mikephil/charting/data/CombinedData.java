@@ -19,9 +19,6 @@ public class CombinedData extends BarLineScatterCandleBubbleData<IBarLineScatter
 
     private LineData mLineData;
     private BarData mBarData;
-    private ScatterData mScatterData;
-    private CandleData mCandleData;
-    private BubbleData mBubbleData;
 
     public CombinedData() {
         super();
@@ -34,21 +31,6 @@ public class CombinedData extends BarLineScatterCandleBubbleData<IBarLineScatter
 
     public void setData(BarData data) {
         mBarData = data;
-        notifyDataChanged();
-    }
-
-    public void setData(ScatterData data) {
-        mScatterData = data;
-        notifyDataChanged();
-    }
-
-    public void setData(CandleData data) {
-        mCandleData = data;
-        notifyDataChanged();
-    }
-
-    public void setData(BubbleData data) {
-        mBubbleData = data;
         notifyDataChanged();
     }
 
@@ -106,24 +88,12 @@ public class CombinedData extends BarLineScatterCandleBubbleData<IBarLineScatter
         }
     }
 
-    public BubbleData getBubbleData() {
-        return mBubbleData;
-    }
-
     public LineData getLineData() {
         return mLineData;
     }
 
     public BarData getBarData() {
         return mBarData;
-    }
-
-    public ScatterData getScatterData() {
-        return mScatterData;
-    }
-
-    public CandleData getCandleData() {
-        return mCandleData;
     }
 
     /**
@@ -138,12 +108,6 @@ public class CombinedData extends BarLineScatterCandleBubbleData<IBarLineScatter
             data.add(mLineData);
         if (mBarData != null)
             data.add(mBarData);
-        if (mScatterData != null)
-            data.add(mScatterData);
-        if (mCandleData != null)
-            data.add(mCandleData);
-        if (mBubbleData != null)
-            data.add(mBubbleData);
 
         return data;
     }
@@ -158,12 +122,6 @@ public class CombinedData extends BarLineScatterCandleBubbleData<IBarLineScatter
             mLineData.notifyDataChanged();
         if (mBarData != null)
             mBarData.notifyDataChanged();
-        if (mCandleData != null)
-            mCandleData.notifyDataChanged();
-        if (mScatterData != null)
-            mScatterData.notifyDataChanged();
-        if (mBubbleData != null)
-            mBubbleData.notifyDataChanged();
 
         calcMinMax(); // recalculate everything
     }

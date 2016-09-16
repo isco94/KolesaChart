@@ -2,7 +2,8 @@ package com.github.mikephil.charting.test;
 
 import com.github.mikephil.charting.data.DataSet;
 import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.ScatterDataSet;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 
 import org.junit.Test;
 
@@ -26,7 +27,7 @@ public class DataSetTest {
         entries.add(new Entry(15, 2));
         entries.add(new Entry(21, 5));
 
-        ScatterDataSet set = new ScatterDataSet(entries, "");
+        LineDataSet set = new LineDataSet(entries, "");
 
         assertEquals(10f, set.getXMin(), 0.01f);
         assertEquals(21f, set.getXMax(), 0.01f);
@@ -63,7 +64,7 @@ public class DataSetTest {
         entries.add(new Entry(15, 2));
         entries.add(new Entry(21, 5));
 
-        ScatterDataSet set = new ScatterDataSet(entries, "");
+        LineDataSet set = new LineDataSet(entries, "");
 
         assertEquals(3, set.getEntryCount());
 
@@ -148,7 +149,7 @@ public class DataSetTest {
         entries.add(new Entry(15, 5));
         entries.add(new Entry(21, 5));
 
-        ScatterDataSet set = new ScatterDataSet(entries, "");
+        LineDataSet set = new LineDataSet(entries, "");
 
         Entry closest = set.getEntryForXValue(17, DataSet.Rounding.CLOSEST);
         assertEquals(15, closest.getX(), 0.01f);
